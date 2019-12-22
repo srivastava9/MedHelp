@@ -25,6 +25,8 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description": "An App made on React Native to help doctor better manage their patients,and send consult Page to patient over the app",
+    "githubUrl": "https://github.com/srivastava9/MedHelp.git"
   }
 }

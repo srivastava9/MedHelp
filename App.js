@@ -18,6 +18,7 @@ import PatientList, {
   PatientData,
   OpenConsult
 } from "./pages/Patient Data/datalist";
+import Recorder from "./pages/consult/recorder";
 
 // import navigator from "./navigator.js";
 class HomeScreen extends Component {
@@ -61,7 +62,8 @@ const AppNavigator = createStackNavigator(
     Success: SuccessMessage,
     PatientList: PatientList,
     PatientData: PatientData,
-    OpenConsult: OpenConsult
+    OpenConsult: OpenConsult,
+    Recorder: Recorder
   },
   {
     initialRouteName: "Home"

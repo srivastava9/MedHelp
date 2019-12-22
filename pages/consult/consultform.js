@@ -11,6 +11,8 @@ import {
 } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
 import { Header } from "react-navigation-stack";
+import * as Permissions from "expo-permissions";
+
 class Consultform extends Component {
   constructor(props) {
     super(props);
@@ -23,6 +25,9 @@ class Consultform extends Component {
       medError: ""
     };
   }
+  openRecord = () => {
+    this.props.navigation.navigate("Recorder");
+  };
   goBack = () => {
     this.props.navigation.goBack();
   };
@@ -101,6 +106,17 @@ class Consultform extends Component {
           </TouchableOpacity>
           <TouchableOpacity style={styles.button2} onPress={this.onSubmit}>
             <Button title="Submit" onPress={this.onSubmit} color="#87CEFA" />
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={{ marginTop: 17, width: 300 }}
+            onPress={this.goBack}
+          >
+            <Button
+              title="Record Audio"
+              onPress={this.openRecord}
+              color="red"
+            />
           </TouchableOpacity>
         </ScrollView>
       </KeyboardAvoidingView>
