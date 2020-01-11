@@ -169,7 +169,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 22,
-    fontFamily: "Roboto",
+
     marginTop: 30,
     marginBottom: 40
   },

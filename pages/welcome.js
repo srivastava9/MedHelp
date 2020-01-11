@@ -20,17 +20,34 @@ class Profile extends Component {
           }}
           style={styles.image}
         />
-        <Text style={styles.text}>Welcome Doctor!</Text>
+        <Text style={styles.text}>Welcome {this.props.name}</Text>
         <Card
           text="Add Consultation"
           styling={{ marginTop: 50 }}
           onClick={this.openConsult}
+          img={{
+            uri:
+              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz0y9K3Zl16_ahkuF-i6MUxbWNPQg47ezJT8jykT7wf3CWMr9NVA&s"
+          }}
         />
-        <Card
-          text="View Patient's Data"
-          styling={{ marginTop: 80 }}
-          onClick={this.openData}
-        />
+        <View style={{ flex: 1, flexDirection: "row" }}>
+          <Card
+            text="View Patient's Data"
+            styling={{ marginTop: 20, width: 130 }}
+            onClick={this.openData}
+            img={{
+              uri: "https://image.flaticon.com/icons/svg/2303/2303858.svg"
+            }}
+          />
+          <Card
+            text="My Appointment"
+            styling={{ marginTop: 20, width: 130, marginLeft: 10 }}
+            onClick={this.openData}
+            img={{
+              uri: "https://image.flaticon.com/icons/svg/847/847032.svg"
+            }}
+          />
+        </View>
       </View>
     );
   }
@@ -41,13 +58,9 @@ function Card(props) {
   return (
     <TouchableOpacity onPress={props.onClick}>
       <View style={[styles.card, props.styling]} clickable="true">
-        <Image
-          source={{
-            uri:
-              "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80"
-          }}
-          style={{ height: 100, width: 265.5 }}
-        />
+        <View style={{ alignItems: "center" }}>
+          <Image source={props.img} style={{ height: 100, width: 100 }} />
+        </View>
         <View
           style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
         >
@@ -60,7 +73,7 @@ function Card(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#F0F8FF",
+
     alignItems: "center"
     // justifyContent: "center"
   },
@@ -70,8 +83,8 @@ const styles = StyleSheet.create({
     borderColor: "#9FC131",
     alignContent: "center",
     borderWidth: 2,
-    borderBottomEndRadius: 20,
-    borderBottomLeftRadius: 20,
+    marginTop: -40,
+    borderRadius: 20,
     elevation: 2
   },
   image: {

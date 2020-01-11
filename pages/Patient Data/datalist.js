@@ -294,7 +294,6 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 22,
-    fontFamily: "Roboto",
 
     marginBottom: 40
   },
@@ -315,7 +314,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 22,
-    fontFamily: "Roboto",
+
     marginTop: 40,
     marginBottom: 40
   },
